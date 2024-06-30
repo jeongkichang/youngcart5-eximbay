@@ -211,13 +211,14 @@ if( function_exists('pg_setting_check') ){
     pg_setting_check(true);
 }
 
-/**
- * kichang
- */
 if( ! isset($default['de_eximbay_mid']) ){
-    $default['de_eximbay_mid'] = '1849705C64';
+    $sql = "ALTER TABLE `{$g5['g5_shop_default_table']}`
+            ADD COLUMN `de_eximbay_mid` VARCHAR(30) NOT NULL DEFAULT '' AFTER `de_pg_service`,
+            ADD COLUMN `de_eximbay_api_key` VARCHAR(30) NOT NULL DEFAULT '' AFTER `de_eximbay_mid`; ";
+    sql_query($sql, false);
 }
-if( ! isset($default['de_eximbay_api_key']) ){
+if( $default['de_eximbay_mid'] == '' ) {
+    $default['de_eximbay_mid'] = '1849705C64';
     $default['de_eximbay_api_key'] = 'test_1849705C642C217E0B2D';
 }
 ?>
