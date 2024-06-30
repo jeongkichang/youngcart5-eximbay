@@ -661,6 +661,7 @@ ul.de_pg_tab li a:hover{text-decoration:none}
 ul.de_pg_tab li.tab-current a{background:#2CC185;color:#fff}
 
 .pg_info_fld{position:relative}
+.eximbay_info_fld th{background-color:#E6FFE6}
 .kcp_info_fld th{background-color:#F6FCFF}
 .lg_info_fld th{background-color:#FFF4FA}
 .inicis_info_fld th{background-color:#F6F1FF}

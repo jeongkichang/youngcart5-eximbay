@@ -766,12 +766,27 @@ if( ! isset($default['de_eximbay_api_key']) ){
                 <input type="hidden" name="de_pg_service" id="de_pg_service" value="<?php echo $default['de_pg_service']; ?>" >
                 <?php echo help('쇼핑몰에서 사용할 결제대행사를 선택합니다.'); ?>
                 <ul class="de_pg_tab">
+					<li class="<?php if($default['de_pg_service'] == 'eximbay') echo 'tab-current'; ?>"><a href="#eximbay_info_anchor" data-value="eximbay" title="엑심베이 선택하기">Eximbay</a></li>
                     <li class="<?php if($default['de_pg_service'] == 'kcp') echo 'tab-current'; ?>"><a href="#kcp_info_anchor" data-value="kcp" title="NHN KCP 선택하기" >NHN KCP</a></li>
                     <li class="<?php if($default['de_pg_service'] == 'lg') echo 'tab-current'; ?>"><a href="#lg_info_anchor" data-value="lg" title="토스페이먼츠 선택하기">토스페이먼츠</a></li>
                     <li class="<?php if($default['de_pg_service'] == 'inicis') echo 'tab-current'; ?>"><a href="#inicis_info_anchor" data-value="inicis" title="KG이니시스 선택하기">KG이니시스</a></li>
                 </ul>
             </td>
         </tr>
+		<tr class="pg_info_fld eximbay_info_fld" id="eximbay_info_anchor">
+			<th scope="row">
+				<label for="de_eximbay_mid">Eximbay mid</label><br>
+			</th>
+			<td>
+				<input type="text" name="de_eximbay_mid" value="<?php echo get_sanitize_input($default['de_eximbay_mid']); ?>" id="de_eximbay_mid" class="frm_input code_input">
+			</td>
+		</tr>
+		<tr class="pg_info_fld eximbay_info_fld">
+			<th scope="row"><label for="de_eximbay_api_key">Eximbay API KEY</label></th>
+			<td>
+				<input type="text" name="de_eximbay_api_key" value="<?php echo get_sanitize_input($default['de_eximbay_api_key']); ?>" id="de_eximbay_api_key" class="frm_input">
+			</td>
+		</tr>
         <tr class="pg_info_fld kcp_info_fld" id="kcp_info_anchor">
             <th scope="row">
                 <label for="de_kcp_mid">KCP SITE CODE</label><br>
