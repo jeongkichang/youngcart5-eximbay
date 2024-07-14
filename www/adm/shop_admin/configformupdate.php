@@ -155,6 +155,8 @@ $check_sanitize_keys = array(
 'de_card_point',                //포인트부여
 'de_point_days',                //주문완료 포인트
 'de_pg_service',                //결제대행사
+'de_eximbay_mid',               //엑심베이 mid
+'de_eximbay_api_key',           //엑심베이 api key
 'de_kcp_mid',                   //KCP SITE CODE
 'de_kcp_site_key',              //NHN KCP SITE KEY
 'cf_lg_mid',                    //LG유플러스 상점아이디
@@ -397,6 +399,8 @@ $sql = " update {$g5['g5_shop_default_table']}
                 de_mimg_width                 = '{$de_mimg_width}',
                 de_mimg_height                = '{$de_mimg_height}',
                 de_pg_service                 = '{$de_pg_service}',
+                de_eximbay_mid                = '{$de_eximbay_mid}',
+                de_eximbay_api_key            = '{$de_eximbay_api_key}',
                 de_kcp_mid                    = '{$de_kcp_mid}',
                 de_kcp_site_key               = '{$de_kcp_site_key}',
                 de_inicis_mid                 = '{$de_inicis_mid}',
