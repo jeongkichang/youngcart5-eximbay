@@ -2,11 +2,14 @@
 if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 
 /**
- * @todo
- * 관리자 페이지에서 설정한 값을 불러와야한다.
+ * @var array $default
  */
-$api_key = 'test_1849705C642C217E0B2D';
-$base64_encode_api_key = base64_encode($api_key.":"); // api_key값 끝에는 콜론(:)를 붙여서 호출해야한다.
+$api_key = $default['de_eximbay_api_key'];
+if ( $api_key == '' ){
+    $api_key = 'test_1849705C642C217E0B2D';
+}
+// api_key값 끝에는 콜론(:)를 붙여서 호출해야한다. eximbay 쪽에서 설정한 규칙임.
+$base64_encode_api_key = base64_encode($api_key.":");
 
 $url = 'https://api-test.eximbay.com/v1/payments/ready';
 $data = '{
